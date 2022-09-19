@@ -30,11 +30,11 @@ public class Menu
 	}
 	private String itemtype;            /*(starters ,maincourseetc)(dropdown)*/
 	private String itemname;
-	private int price;
-	private boolean available;
+	private Integer price;
+	private Boolean available;
 	private String itemimage;			//(String link to foreign resource)
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JsonIgnore
 	private Regedhotels hotel;
 	
@@ -58,24 +58,27 @@ public class Menu
 		this.itemname = itemname;
 	}
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public boolean isAvailable() {
+
+	public Boolean getAvailable() {
 		return available;
 	}
-	public void setAvailable(boolean available) {
+
+	public void setAvailable(Boolean available) {
 		this.available = available;
 	}
+
 	public String getItemimage() {
 		return itemimage;
 	}

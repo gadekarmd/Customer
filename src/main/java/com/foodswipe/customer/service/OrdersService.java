@@ -69,6 +69,17 @@ public class OrdersService implements OrdersServiceInterface{
 		return returnOrders;
 	}
 
+	@Override
+	public List<Orders> saveOrders(List<Orders> orders) {
+		// TODO Auto-generated method stub
+		for (Orders or: orders) {
+			
+			this.ordersDAO.save(or);
+		}
+		
+		return orders; 
+	}
+
 	
 
 }

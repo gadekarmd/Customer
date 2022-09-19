@@ -11,4 +11,5 @@ public interface OrdersServiceInterface {
 	public void deleteOrder(Long orderId);
 	public Orders updateOrder(Long orderId, Orders order);
 	public List<Orders> getOrders(User_info user, Long hotelid);
+	public List<Orders> saveOrders(List<Orders> orders);
 }

@@ -23,16 +23,16 @@ public class Orders
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JsonIgnore
 	private  User_info client; //foreign key
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	@JsonIgnore
 	private Regedhotels hotelorders;  //foreign key
 	
 	private Long itemid;   //foreign key
-	private int quantity;
+	private Integer quantity;
 	private String ordertime;
 	private String delieveryadd;
 	
@@ -56,16 +56,16 @@ public class Orders
 	public void setHotelorders(Regedhotels hotelorders) {
 		this.hotelorders = hotelorders;
 	}
-	public long getItemid() {
+	public Long getItemid() {
 		return itemid;
 	}
-	public void setItemid(long itemid) {
+	public void setItemid(Long itemid) {
 		this.itemid = itemid;
 	}
-	public int getQuantity() {
+	public Integer getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(int quantity) {
+	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
 	public String getOrdertime() {

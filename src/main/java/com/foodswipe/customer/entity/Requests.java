@@ -1,23 +1,23 @@
 package com.foodswipe.customer.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Regedhotels
+public class Requests
 {
+	// handle this during hotel registrarion
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	Long id;
+	private Long id;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private String username;
 	private String password;
 	private String Hname;
@@ -28,35 +28,6 @@ public class Regedhotels
 	private String email;
 	private String Imagelink; //hotelImage link user provided
 	private String certificate; //gstcertificate link user porvided 
-	
-	public Regedhotels() {}
-	
-	@OneToMany(mappedBy = "hotel", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Menu> menulist;
-	
-	@OneToMany(mappedBy = "hotelorders", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private List<Orders> orderslist;
-	
-	public List<Orders> getOrderslist() {
-		return orderslist;
-	}
-	public void setOrderslist(List<Orders> orderslist) {
-		this.orderslist = orderslist;
-	}
-	public List<Menu> getMenulist() {
-		return menulist;
-	}
-	public void setMenulist(List<Menu> menulist) {
-		this.menulist = menulist;
-	}
-	
-	//getters and setters are here
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -116,5 +87,7 @@ public class Regedhotels
 	}
 	public void setCertificate(String certificate) {
 		this.certificate = certificate;
-	}	
+	}
+	
+	
 }

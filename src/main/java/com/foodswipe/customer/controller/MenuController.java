@@ -14,13 +14,13 @@ import com.foodswipe.customer.service.HotelServiceInterface;
 import com.foodswipe.customer.service.MenuServiceInterface;
 
 @RestController
-@RequestMapping("/menu")
+@RequestMapping("/dashboard/{city}")
 public class MenuController {
 
 	@Autowired
 	private MenuServiceInterface menuServ;
 	
-	@GetMapping("hotel/{hotelid}")
+	@GetMapping("/{hotelid}")
 	public List<Menu> showMenu(@PathVariable("hotelid") Long hotelid) {
 		
 		Regedhotels hotel = new Regedhotels();

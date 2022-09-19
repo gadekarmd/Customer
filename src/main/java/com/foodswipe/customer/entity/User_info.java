@@ -18,7 +18,7 @@ public class User_info
 {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id; 
+	private Long id; 
 	private String username;
 	private String name;
 	private String address;
@@ -27,8 +27,7 @@ public class User_info
 	private String password;
 	private String gender;
 	
-	@OneToMany(mappedBy = "client", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JsonIgnore
+	@OneToMany(mappedBy = "client", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Orders> list;
 	
 	public List<Orders> getList() {
@@ -37,10 +36,10 @@ public class User_info
 	public void setList(List<Orders> list) {
 		this.list = list;
 	}
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUsername() {

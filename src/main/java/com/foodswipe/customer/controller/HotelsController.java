@@ -15,7 +15,7 @@ import com.foodswipe.customer.service.HotelServiceInterface;
 import com.foodswipe.customer.service.MenuServiceInterface;
 
 @RestController
-@RequestMapping("/hotels")
+@RequestMapping("/customer/dashboard/")
 public class HotelsController {
 
 	@Autowired
